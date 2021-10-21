@@ -1,0 +1,1 @@
+UPDATE `tb_product`,`tb_shop` SET `status`= 0 WHERE tb_shop.name = 'rudyshop' && tb_shop.id = tb_product.shop_id

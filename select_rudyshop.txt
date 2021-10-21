@@ -1,0 +1,1 @@
+SELECT tb_product.id, tb_product.name, status, tb_shop.name FROM `tb_product`,`tb_shop` WHERE tb_shop.name = 'rudyshop' && tb_shop.id = tb_product.shop_id

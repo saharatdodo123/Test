@@ -1,0 +1,15 @@
+?php
+        $conn = new mysqli("localhost", "root", "12345678", "photogeapher_gallery");
+	$_POST['username'];
+        $_POST['password'];
+
+        $stmt = $conn->prepare("SELECT * FROM customer WHERE cus_email = :username ");
+        $stmt->execute(array(":username" => $_POST['username']));
+        $row = $stmt->fetch(PDO::FETCH_ASSOC));
+
+	if( !empty($row) && password_verify($_POST['password'], $row->password)) {
+		echo json_encode($row);
+	}else {
+		echo "ไม่มีข้อมูล";
+	}
+?>
